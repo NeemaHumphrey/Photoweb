@@ -1,0 +1,16 @@
+{% extends "album/layout.html" %} {% load static %} {% block title %} New photos | PhotoNet {% endblock %} {% block import_scripts %} {% endblock %} {% block main %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Main column -->
+        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            {% if following %} {% for post in posts %} {% include "album/layout2.html" %} {% empty %}
+            
+            <p class="text-centerr"><strong><marquee direction="left" behaviour="slide"><H1>WELCOME BACK TO PHOTONET</H1></marquee></strong></p>
+            {% endfor %} {% else %}
+            <p class="text-center"><strong><marquee direction="left" behaviour="slide"><H1>WELCOME TO PHOTONET</H1></marquee></strong></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

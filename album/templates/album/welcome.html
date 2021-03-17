@@ -1,0 +1,27 @@
+{% extends "album/layout.html" %} {% load static %} {% block title %} Welcome to PhotoNet! {% endblock %} {% block import_scripts %}
+<script src="{% static 'album/js/welcome.js' %}"></script>
+{% endblock %} {% block main %}
+<div class="container-fluid">
+    <div class="row welcome-row">
+        <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-2 col-xl-3 offset-xl-3 fancy-font text-center welcome-col">
+
+        </div>
+
+        <body>
+            <div id="wrapper">
+                <div class="container">
+                    <div class="form-data" style="color: rgb(63, 1, 1);">
+                        <div class="form-banner"><h1><strong><center>PHOTONET</center></strong></h1></div>
+                        <form id="form-login" name="form-login" action="{% url 'welcome' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="login-username">Username </label>
+                                <input type="text" class="form-control" id="login-username" name="username" placeholder="Username or email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" class="form-control" id="login-password" name="password" placeholder="Password" required>
+                            </div>
+                            <input  type="submit" class="btn btn-primary" value="login">
+                        </form>
+                        Don't have an account? <a href="{% url 'register1' %}">Register here.</a>{% endblock %}
